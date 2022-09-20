@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>LOGIN</h1>
+<form action="" method='POST'>
+    {% csrf_token %}
+    <form action="" method='POST'>
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value=""><br>
+        <label for="lname">Password:</label><br>
+        <input type="password" id="password" name="password" value=""><br><br>
+        <input type="submit" value="Submit">
+      </form>
+ 
+  </form><br>
+  <a href="{% url 'signup' %}">Signup here</a>
+
+</body>
+</html>
